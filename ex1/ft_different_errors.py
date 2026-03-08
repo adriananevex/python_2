@@ -10,7 +10,7 @@ def garden_operations() -> None:
 
     try:
         print("Testing ZeroDivisionError...")
-        result = 10 / 0
+        10 / 0
     except ZeroDivisionError as e:
         print(f"Caught ZeroDivisionError: {e}")
     print()
@@ -39,6 +39,7 @@ def garden_operations() -> None:
     print()
 
     print("All error types tested successfully!")
+
 
 if __name__ == "__main__":
     garden_operations()

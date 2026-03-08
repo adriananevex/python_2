@@ -1,11 +1,14 @@
 class GardenError(Exception):
     pass
 
+
 class PlantError(GardenError):
     pass
 
+
 class WaterError(GardenError):
     pass
+
 
 def test_custom_errors() -> None:
     print("=== Custom Garden Errors Demo ===\n")
@@ -31,8 +34,9 @@ def test_custom_errors() -> None:
 
     try:
         raise WaterError("Not enough water in the tank!")
-    except GardenError as e:
+    except GardenError:
         print("\nAll custom error types work correctly!")
+
 
 if __name__ == "__main__":
     test_custom_errors()
