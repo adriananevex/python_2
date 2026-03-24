@@ -7,11 +7,22 @@ def test_temperature() -> None:
 
     try:
         temp = "25"
-        
-        print()
+        print(f"Input data is '{temp}'")
+        result = input_temperature(temp)
+        print(f"Temperature is now {result}°C\n")
+    except Exception as e:
+        print(f"Caught input_temperature error: {e}")
+
+    try:
+        temp = "abc"
+        print(f"Input data is '{temp}'")
+        result = input_temperature(temp)
+        print(f"Temperature is now {result}°C\n")
+    except Exception as e:
+        print(f"Caught input_temperature error: {e}\n")
 
     print("All tests completed - program didn't crash!")
 
 
 if __name__ == "__main__":
-    test_temperature_input()
+    test_temperature()
