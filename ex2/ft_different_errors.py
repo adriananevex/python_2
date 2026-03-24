@@ -9,7 +9,7 @@ def garden_operations(operation_number: int) -> None:
         open("file_that_does_not_exist.txt")
 
     elif operation_number == 3:
-        "hello" + 5
+        "hello" + 5 # type: ignore
 
     else:
         print("No error for this operation.")
