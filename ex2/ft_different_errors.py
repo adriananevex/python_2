@@ -6,30 +6,30 @@ def garden_operations(operation_number: int) -> None:
         10 / 0
 
     elif operation_number == 2:
-        open("file_that_does_not_exist.txt")
+        open("test.txt")
 
     elif operation_number == 3:
-        "hello" + 5 # type: ignore
+        "hello" + 5
 
     else:
-        print("No error for this operation.")
+        print("Operation completed successfully")
 
 
 def test_error_types() -> None:
     print("=== Garden Error Types Demo ===\n")
 
-    for i in range(4):
+    for i in range(5):
         try:
             print(f"Testing operation {i}...")
             garden_operations(i)
-        except ValueError:
-            print("Caught ValueError: invalid data provided!")
-        except ZeroDivisionError:
-            print("Caught ZeroDivisionError: cannot divide by zero!")
-        except FileNotFoundError:
-            print("Caught FileNotFoundError: file does not exist!")
-        except TypeError:
-            print("Caught TypeError: incompatible types!")
+        except ValueError as e:
+            print(f"Caught ValueError: {e}")
+        except ZeroDivisionError as e:
+            print(f"Caught ZeroDivisionError: {e}")
+        except FileNotFoundError as e:
+            print(f"Caught FileNotFoundError: {e}")
+        except TypeError as e:
+            print(f"Caught TypeError: {e}")
         print()
 
     try:
