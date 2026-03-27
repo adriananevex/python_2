@@ -1,8 +1,4 @@
-class GardenError(Exception):
-    pass
-
-
-class PlantError(GardenError):
+class PlantError(Exception):
     def __init__(self, message="Invalid plant error"):
         super().__init__(message)
 
@@ -16,7 +12,7 @@ def water_plant(plant_name: str) -> None:
 
 def test_watering_system() -> None:
     print("=== Garden Watering System ===")
-
+    print()
     print("Testing valid plants...")
     try:
         print("Opening watering system")
@@ -33,6 +29,7 @@ def test_watering_system() -> None:
 
     finally:
         print("Closing watering system")
+        print()
 
     print("Testing invalid plants...")
     try:
@@ -46,10 +43,10 @@ def test_watering_system() -> None:
     except PlantError as e:
         print(f"Caught PlantError: {e}")
         print(".. ending tests and returning to main")
-        return
 
     finally:
         print("Closing watering system")
+        print()
 
     print("Cleanup always happens, even with errors!")
 
